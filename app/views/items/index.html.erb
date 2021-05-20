@@ -1,0 +1,91 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      人生を変える釣り攻略アプリ
+    </h2>
+    <p class='service-explain'>
+      TURIMOはだれでもおすすめの釣具を紹介できる
+    </p>
+    <p class='service-explain'>
+      釣り攻略アプリです
+    </p>
+  </div>
+  
+ 
+  <div class='feature-contents'>
+    <h2 class='title'>
+      TURIMOの特徴
+    </h2>
+    <ul class='feature-lists'>
+      <li class='list'>
+        <%= image_tag "image.jpeg", class:"list-pict" %>
+
+        <h3 class='feature-list-text'>
+          簡単に便利な釣具を見ることができる
+        </h3>
+        <p class='feature-list-description'>
+          スマホひとつで、いつでもどこでも簡単に紹介・記事を見る事が可能！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "IMG_5860.jpg", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          釣り初心者にも分かりやすく
+        </h3>
+        <p class='feature-list-description'>
+          釣り初心者にも分かりやすく見やすくなっています。
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "7f2f1738.jpg", class:"list-pict" %>
+        <h3 class='feature-list-text'>
+          全ての釣り好きに対応
+        </h3>
+        <p class='feature-list-description'>
+          川や海、湖の釣具にも対応しています。
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class='item-contents'>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <div class="subtitle" >
+      新規紹介商品
+    </div>
+    <ul class='item-lists'>
+
+      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <li class='list'>
+        <%= link_to "#" do %>
+        <div class='item-img-content'>
+          <%= image_tag "item-sample.png", class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= "商品名" %>
+          </h3>
+        </div>
+        <% end %>
+      </li>
+
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            紹介してね！
+          </h3>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+<%= link_to(new_item_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>記事を書く</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+<%= render "shared/footer" %>
