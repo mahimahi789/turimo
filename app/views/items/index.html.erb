@@ -52,35 +52,38 @@
 
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
-    <div class="subtitle" >
-      新規紹介商品
-    </div>
+    <%= link_to '新規投稿商品', new_item_path, class: "subtitle" %>
     <ul class='item-lists'>
 
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <div class='item-img-content'>
-          <%= image_tag "item-sample.png", class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= "商品名" %>
-          </h3>
-        </div>
-        <% end %>
-      </li>
+      <% @items.each do |item| %>
+        <li class='list'>
+          <%= link_to item_path(item) do %>
+          <div class='item-img-content'>
+            <%= image_tag item.image, class: "item-img" %>
+          </div>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              <%= item.item_name %>
+            </h3>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
 
-      <li class='list'>
-        <%= link_to '#' do %>
-        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            紹介してね！
-          </h3>
-        </div>
-        <% end %>
-      </li>
+
+      <% if @items.length == 0 %>
+        <li class='list'>
+          <%= link_to '#' do %>
+          <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+          <div class='item-info'>
+            <h3 class='item-name'>
+              紹介してね！
+            </h3>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
