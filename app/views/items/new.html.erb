@@ -4,9 +4,9 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">アイテムの情報を入力</h2>
-    <%= form_with local: true do |f| %>
+    <%= form_with model: @item, url: items_path, local: true do |f| %>
 
-    <%# render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -17,7 +17,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :hoge, id:"item-image" %>
+        <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
    
@@ -26,13 +26,13 @@
         アイテム名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :hoge, class:"items-text", id:"item-name", placeholder:"アイテム名（必須 100文字まで)", maxlength:"40" %>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"アイテム名（必須 100文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           アイテムの説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :hoge, class:"items-text", id:"item-info", placeholder:"紹介したいアイテムの説明（色、素材、重さ、定価、注意点、コツなど）" ,rows:"7" %>
+        <%= f.text_area :item_description, class:"items-text", id:"item-info", placeholder:"紹介したいアイテムの説明（色、素材、重さ、定価、注意点、コツなど）" ,rows:"7" %>
       </div>
     </div>
    
@@ -43,12 +43,12 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           使用場所
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%= f.collection_select(:use_id, Use.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
     </div>
   
@@ -59,20 +59,15 @@
       </div>
       <div class="form">
         <div class="weight-bold-text">
-          配送料の負担
+          定価
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%= f.text_area :price, class:"select-box", id:"item-shipping-fee-status" %>
         <div class="weight-bold-text">
-          発送元の地域
+          メーカー
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-prefecture"}) %>
-        <div class="weight-bold-text">
-          発送までの日数
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:marker_id, Marker.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
       </div>
     </div>
   
@@ -90,3 +85,4 @@
     </p>
   </footer>
 </div>
+<%#margin: 2vh 0;%> 
