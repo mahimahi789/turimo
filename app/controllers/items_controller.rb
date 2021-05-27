@@ -24,8 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    #@comments = Comment.all
-    #@comment = Comment.new
+    @comments = Comment.all
+    @comment = Comment.new
     #@comments = @item.comments.includes(:user)
   end
 
