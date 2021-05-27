@@ -6,7 +6,7 @@
     <h2 class="name">
       <%= @item.item_name %>
     </h2>
-    <div class="main">
+    <div class="mai">
     <div class="item-img-content">
       <%= image_tag @item.image ,class:"item-box-img" %>
     </div>
@@ -36,6 +36,9 @@
       </tbody>
     </table>
     </div>
+    <div class="description">
+      <span>＜アイテムの説明＞</span>
+    </div>
     <div class="item-explain-box">
       <span><%= @item.item_description %></span>
     </div>
@@ -52,10 +55,6 @@
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
         <span>お気に入り 0</span>
       </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
     </div>
   </div>
   <%# /商品の概要 %>
@@ -70,14 +69,11 @@
       </p>
       <button type="submit" class="comment-btn">
         <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
+        <span>質問する<span>
       </button>
     </form>
   </div>
 
-  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
-  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 
 <%= render "shared/footer" %>
