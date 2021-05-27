@@ -3,14 +3,13 @@ a {
 }
 
 .main {
-  background: #a5c7f5;
+  background: #f8f8f8;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('main_01.webp');
-
+  background-image: image-url('furima-header01.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -19,7 +18,7 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 15vw;
-  color: rgb(234, 241, 241);
+  color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 

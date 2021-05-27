@@ -11,40 +11,98 @@
     <p class='service-explain'>
       釣り攻略アプリです
     </p>
+    <div class='store-btn'>
+      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+      <%# link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+    </div>
   </div>
-  
- 
+
+  <div class='select-reason-contents'>
+    <h2 class='title'>
+      FURIMAが選ばれる3つの理由
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "furima-intro01.png", class:"list-pict" %>
+        <span class='reason-list-number'>1</span>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>3分</span>
+          ですぐに出品
+        </h3>
+        <p class='reason-list-description'>
+          スマホで入力するだけで簡単に出品できる！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "furima-intro02.png", class:"list-pict" %>
+        <span class='reason-list-number'>2</span>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>シンプル</span>
+          で使いやすい
+        </h3>
+        <p class='reason-list-description'>
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "furima-intro03.png", class:"list-pict" %>
+        <span class='reason-list-number'>3</span>
+        <h3 class='reason-list-text'>
+          手数料
+          <span class='reason-list-blue-text'>業界最安</span>
+        </h3>
+        <p class='reason-list-description'>
+          10%でお得に出品&購入！
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <div class='ad-contents'>
+    <h2 class='ad-title'>
+      会員数日本一位
+    </h2>
+    <p class='ad-explain'>
+      FURIMAは、フリマアプリで最も人気。
+    </p>
+    <p class='ad-explain'>
+      出品・購入回数も業界最多です！
+    </p>
+    <p class='ad-explain'>
+      ほしかったあの商品に出会えるかもしれません。
+    </p>
+  </div>
+
   <div class='feature-contents'>
     <h2 class='title'>
-      TURIMOの特徴
+      FURIMAの特徴
     </h2>
     <ul class='feature-lists'>
       <li class='list'>
-        <%= image_tag "image.jpeg", class:"list-pict" %>
-
+        <%= image_tag "furima-intro04.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          簡単に便利な釣具を見ることができる
+          簡単に売り買いできる
         </h3>
         <p class='feature-list-description'>
-          スマホひとつで、いつでもどこでも簡単に紹介・記事を見る事が可能！
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "IMG_5860.jpg", class:"list-pict" %>
+        <%= image_tag "furima-intro05.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          釣り初心者にも分かりやすく
+          売上金は即日振込みに対応
         </h3>
         <p class='feature-list-description'>
-          釣り初心者にも分かりやすく見やすくなっています。
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします。
         </p>
       </li>
       <li class='list'>
-        <%= image_tag "7f2f1738.jpg", class:"list-pict" %>
+        <%= image_tag "furima-intro06.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          全ての釣り好きに対応
+          様々な支払いに対応
         </h3>
         <p class='feature-list-description'>
-          川や海、湖の釣具にも対応しています。
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
         </p>
       </li>
     </ul>
@@ -55,34 +113,43 @@
     <%= link_to '新規投稿商品', new_item_path, class: "subtitle" %>
     <ul class='item-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @items.each do |item| %>
         <li class='list'>
           <%= link_to item_path(item) do %>
           <div class='item-img-content'>
             <%= image_tag item.image, class: "item-img" %>
-          </div>
-          <div class='item-info'>
-            <h3 class='item-name'>
-              <%= item.item_name %>
-            </h3>
-            <div class='item-price'>
-              <span><%= item.marker.name %></span>
-            </div>
-          </div>
-          <% end %>
-        </li>
-      <% end %>
 
+          </div>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%= item.item_name %>
+              </h3>
+              <div class='item-price'>
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </li>
+      <% end %>
 
       <% if @items.length == 0 %>
         <li class='list'>
           <%= link_to '#' do %>
-          <%= image_tag "https://i1.wp.com/turileco.net/wp-content/uploads/2017/06/831a93480065010e87fab0f5b685d5c2.jpg?fit=477%2C386&ssl=1", class: "item-img" %>
+          <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
           <div class='item-info'>
             <h3 class='item-name'>
-              紹介してね！
+              商品を出品してね！
             </h3>
+            <div class='item-price'>
+              <span>99999999円<br>(税込み)</span>
+              <div class='star-btn'>
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
+              </div>
+            </div>
           </div>
           <% end %>
         </li>
@@ -91,7 +158,7 @@
   </div>
 </div>
 <%= link_to(new_item_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>紹介する</span>
+  <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 <% end %>
 <%= render "shared/footer" %>
