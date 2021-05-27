@@ -26,18 +26,11 @@
 }
 
 .item-box-img {
-  height: 40vh;
-  width: 50vw;
+  height: 50vh;
+  width: 60vw;
   min-height: 500px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
-}
-
-.main{
-  background-color:white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .item-price-box {
@@ -93,8 +86,8 @@
 }
 
 .detail-table {
-  height: 45vw;
-  width: 40vw;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .detail-item {

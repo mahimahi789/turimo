@@ -66,9 +66,6 @@
             <h3 class='item-name'>
               <%= item.item_name %>
             </h3>
-            <div class='item-price'>
-              <span><%= item.marker.name %></span>
-            </div>
           </div>
           <% end %>
         </li>
@@ -78,7 +75,7 @@
       <% if @items.length == 0 %>
         <li class='list'>
           <%= link_to '#' do %>
-          <%= image_tag "https://i1.wp.com/turileco.net/wp-content/uploads/2017/06/831a93480065010e87fab0f5b685d5c2.jpg?fit=477%2C386&ssl=1", class: "item-img" %>
+          <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
           <div class='item-info'>
             <h3 class='item-name'>
               紹介してね！
