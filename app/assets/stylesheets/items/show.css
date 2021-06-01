@@ -224,3 +224,16 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comments {
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.abc {
+  color: #57C3E9;
+}
+
+.comments a:hover {
+  text-decoration: underline;
+}
