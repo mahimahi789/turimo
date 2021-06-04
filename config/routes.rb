@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    #get :search, on: :collection
   end
 end

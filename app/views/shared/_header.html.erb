@@ -4,21 +4,21 @@
     
     <%# link_to image_tag("", class:"furima-icon"), "/" %>
     <%= link_to "TURIMO", root_path, class:"items-sell-header" %>
-    <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |f| %>
-      <%= f.text_field :keyword, placeholder: "アイテムを探す", class: "input-box" %>
-      <%# f.submit image: "search.png", class: "search-button" %>
+    <%# form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%# f.text_field :keyword ,placeholder: "アイテムを探す", class: "input-box" %>
+      <%# f.submit "search.png", class: "search-button" %>
         <%# image_tag "search.png", class:"search-icon" %>
       <%# end %>
       <%#input class='input-box' placeholder='アイテムを探す' %>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
+      <%#button class="search-button">
+        <%# image_tag "search.png", class:"search-icon" %>
+      <%#/button%>
     <% end %>
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <li><%# link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li><%# link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
