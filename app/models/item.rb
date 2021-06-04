@@ -6,7 +6,6 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
-  has_many :messages 
 
   with_options presence: true do
     validates :item_name, length:{maximum:100}
@@ -20,12 +19,6 @@ class Item < ApplicationRecord
     validates :use_id
     validates :marker_id
   end
+ 
 
-  def self.search(search)
-    if search != ""
-      Item.where('item_name LIKE(?)', "%#{search}%")
-    else
-      Item.all
-    end
-  end
 end

@@ -20,6 +20,7 @@ class User < ApplicationRecord
   end
       
   has_many :items
-  has_many :messages  
+  has_many :buy_manages
+  has_many :comments  
 end
 

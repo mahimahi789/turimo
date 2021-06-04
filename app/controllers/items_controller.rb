@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_item, only: [:edit, :update, :show, :destroy]
-  before_action :move_to_index, only: [:update, :edit, :destroy]
-  before_action :move_index, except: [:index, :show, :search]
+  #before_action :move_to_index, only: [:update, :edit, :destroy]
 
   
 
@@ -25,13 +24,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @messages = Message.all
-    @message = Message.new
-    #@messages = @item.messages.includes(:user)
-  end
-
-  def search
-    @items = Item.search(params[:keyword])
+    #@comments = Comment.all
+    #@comment = Comment.new
   end
 
   def edit
@@ -65,17 +59,12 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def move_to_index
-    if current_user != @item.user
-      redirect_to root_path
-    end
-  end
+  #def move_to_index
+    #if current_user != @item.user
+      #redirect_to root_path
+    #end
+ # end
 
-  def move_index
-   unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
 
 
 end
